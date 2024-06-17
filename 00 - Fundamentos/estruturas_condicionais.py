@@ -1,24 +1,34 @@
-MAIOR_IDADE = 18
-IDADE_ESPECIAL = 17
+conta_normal = False
+conta_universitaria = True
+conta_especial = False
+saldo = 2000
+saque = 1500
+cheque_especial = 450
 
-idade = int(input("Informe sua idade: "))
+if conta_normal:
 
-if idade >= MAIOR_IDADE:
-    print("Maior de idade, pode tirar a CHN.")
+    if saldo >= saque:
+        print("Saque realizado com sucesso!")
+    elif saque <= (saldo + cheque_especial):
+        print("Saque realizado com uso do cheque especial!")
+    else:
+        print("Não foi possivel realizar o saque, saldo insuficiente!")
 
-if idade < MAIOR_IDADE:
-    print("Ainda não pode tirar a CNH.")
+elif conta_universitaria:
 
 
-if idade >= MAIOR_IDADE:
-    print("Maior de idade, pode tirar a CHN.")
+
+    ##################################################
+
+    status = "Sucesso" if saldo >= saque else "Falha"
+    print(f"{status} ao realizar o saque!")
+
+    ##################################################
+
+
+
+elif conta_especial:
+    print("Conta especial selecionada!")
+
 else:
-    print("Ainda não pode tirar a CNH.")
-
-
-if idade >= MAIOR_IDADE:
-    print("Maior de idade, pode tirar a CHN.")
-elif idade == IDADE_ESPECIAL:
-    print("Pode fazer aulas teóricas, mas não pode fazer aulas práticas.")
-else:
-    print("Ainda não pode tirar a CNH.")
+    print("Sistema não reconheceu seu tipo de conta, entre em contato com o seu gerente.")
